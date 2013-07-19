@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130719173713) do
+ActiveRecord::Schema.define(:version => 20130719174917) do
+
+  create_table "distance_essentials", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.date     "date"
+    t.integer  "diet_quality"
+    t.integer  "hours_of_sleep"
+    t.integer  "minutes_run"
+    t.integer  "minutes_streching"
+    t.integer  "minutes_icing"
+    t.integer  "core_strength"
+    t.integer  "upper_body_weights"
+    t.integer  "minutes_cross_training"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  add_index "distance_essentials", ["team_id"], :name => "index_distance_essentials_on_team_id"
+  add_index "distance_essentials", ["user_id"], :name => "index_distance_essentials_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -23,6 +42,12 @@ ActiveRecord::Schema.define(:version => 20130719173713) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

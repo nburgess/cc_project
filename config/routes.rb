@@ -1,4 +1,10 @@
 CcProject::Application.routes.draw do
+  resources :distance_essentials
+
+
+  resources :teams
+
+
   authenticated :user do
     root :to => 'home#index'
   end

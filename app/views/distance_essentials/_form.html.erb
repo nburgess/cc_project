@@ -1,0 +1,20 @@
+<%= simple_form_for(@distance_essential) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :team %>
+    <%= f.input :date %>
+    <%= f.input :diet_quality %>
+    <%= f.input :hours_of_sleep %>
+    <%= f.input :minutes_run %>
+    <%= f.input :minutes_streching %>
+    <%= f.input :minutes_icing %>
+    <%= f.input :core_strength %>
+    <%= f.input :upper_body_weights %>
+    <%= f.input :minutes_cross_training %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
