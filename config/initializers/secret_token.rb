@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-CcProject::Application.config.secret_token = '263fb7b8b1da4ab8d5d1bbb2f7c3ced1f22f49c7b7126b48a9f44e0bb02f4eb3c178d72938cba65cc957028818d6cf92cab36aa8d28ed21c36769899a535d14e'
+CcProject::Application.config.secret_token = 'f83a531d6872c93d0107249b9efdd49a0bae716b1223a8eb37097d718cb19fc3305fa544e4414195ecfd263ed5b1216f033062adae09face7eac1d0323185865'
