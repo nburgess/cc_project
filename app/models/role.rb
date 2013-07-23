@@ -3,4 +3,12 @@ class Role < ActiveRecord::Base
   belongs_to :resource, :polymorphic => true
   
   scopify
+
+  ROLE_ADMIN = "admin"
+  ROLE_COACH = "coach"
+  ROLE_PLAYER = "player"
+
+  def self.all_but_admin
+    where("name <> ?", ROLE_ADMIN)
+  end
 end

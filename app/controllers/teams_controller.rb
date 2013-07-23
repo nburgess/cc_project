@@ -13,11 +13,14 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
-    @team = Team.find(params[:id])
-
+    @teamvds = Team.find(params[:id]).distance_essentials
+    
+    #@user= User.find(params[:id])
+    #@teams = @user.teams
+    #	
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @team }
+      format.json { render json: @teamvds }
     end
   end
 

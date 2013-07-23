@@ -40,7 +40,9 @@ class DistanceEssentialsController < ApplicationController
   # POST /distance_essentials
   # POST /distance_essentials.json
   def create
+
     @distance_essential = DistanceEssential.new(params[:distance_essential])
+    @distance_essential.current_user = current_user
 
     respond_to do |format|
       if @distance_essential.save

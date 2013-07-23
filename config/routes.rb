@@ -1,7 +1,6 @@
 CcProject::Application.routes.draw do
   resources :distance_essentials
 
-
   resources :teams
 
 

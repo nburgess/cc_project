@@ -1,4 +1,10 @@
-<h3>Home</h3>
+<h3 class= "text-center">Home</h3>
 <% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
 <% end %>
+<div class= "text-center">
+    <a href="#" class="button">Log In</a>
+</div>
+<div class= "text-center">
+    <a href="#" class="small button">New User</a>
+</div>

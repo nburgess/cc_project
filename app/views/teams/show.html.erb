@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<% @teamvds.each do |d|  %>
+  <p>
   <b>Name:</b>
-  <%= @team.name %>
+  <%= d.user.distance_essentials  %>
 </p>
 
+<% end %>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
+
+
+<%= link_to 'Edit', edit_team_path(@teamvds) %> |
 <%= link_to 'Back', teams_path %>
