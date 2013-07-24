@@ -85,6 +85,7 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     formatador (0.2.4)
+    friendly_id (4.0.9)
     fssm (0.2.10)
     guard (1.8.1)
       formatador (>= 0.2.4)
@@ -229,6 +230,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   figaro
+  friendly_id
   guard-bundler
   guard-rails
   guard-rspec

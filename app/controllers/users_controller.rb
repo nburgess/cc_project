@@ -8,6 +8,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @uservds = @user.distance_essentials
+    
+    #respond_to do |format|
+    #   format.json {render json: @uservds}
+    #end
   end
   
   def update

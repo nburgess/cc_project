@@ -1,4 +1,10 @@
 class User < ActiveRecord::Base
+  #extend FriendlyId
+  #friendly_id :login
+  #validates_format_of :login, :with => /\A[a-z0-9]+\z/i
+  #friendly_id :user
+  #validates_format_of :user, :with => /\A[a-z0-9]+\z/i
+
   rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

@@ -3,7 +3,7 @@ class DistanceEssentialsController < ApplicationController
   # GET /distance_essentials.json
   def index
     @distance_essentials = DistanceEssential.all
-
+  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @distance_essentials }
