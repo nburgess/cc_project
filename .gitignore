@@ -75,3 +75,7 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore gedit temp files
+# ignore vim swp files and gedit temp files
+*.*~

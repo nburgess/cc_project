@@ -2,12 +2,12 @@
 
 <p>
   <b>User:</b>
-  <%= @distance_essential.user %>
+  <%= @distance_essential.user.name %>
 </p>
 
 <p>
   <b>Team:</b>
-  <%= @distance_essential.team %>
+  <%= @distance_essential.team.name %>
 </p>
 
 <p>
@@ -57,4 +57,4 @@
 
 
 <%= link_to 'Edit', edit_distance_essential_path(@distance_essential) %> |
-<%= link_to 'Back', distance_essentials_path %>
+<%= link_to 'Back', :back %>

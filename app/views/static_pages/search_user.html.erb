@@ -1,0 +1,4 @@
+<h3 class= "text-center">Search for User</h3>
+<% @users.each do |user| %>
+  <p>User: <%=link_to user.name, user %></p>
+<% end %>

@@ -1,13 +1,38 @@
 <p id="notice"><%= notice %></p>
-<% @teamvds.each do |d|  %>
-  <p>
-  <b>Name:</b>
-  <%= d.user.distance_essentials  %>
-</p>
+<h1><%= @team.name  %></h1>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Diet quality</th>
+    <th>Hours of sleep</th>
+    <th>Minutes run</th>
+    <th>Minutes streching</th>
+    <th>Minutes icing</th>
+    <th>Core strength</th>
+    <th>Upper body weights</th>
+    <th>Minutes cross training</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
+<% @teamvds.each do |distance_essential| %>
+  <tr>
+    <td><%= distance_essential.date %></td>
+    <td><%= distance_essential.diet_quality %></td>
+    <td><%= distance_essential.hours_of_sleep %></td>
+    <td><%= distance_essential.minutes_run %></td>
+    <td><%= distance_essential.minutes_streching %></td>
+    <td><%= distance_essential.minutes_icing %></td>
+    <td><%= distance_essential.core_strength %></td>
+    <td><%= distance_essential.upper_body_weights %></td>
+    <td><%= distance_essential.minutes_cross_training %></td>
+    <td><%= link_to 'Show', distance_essential %></td>
+    <td><%= link_to 'Edit', edit_distance_essential_path(distance_essential) %></td>
+    <td><%= link_to 'Destroy', distance_essential, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
 <% end %>
-
-
+</table>
 
 <%= link_to 'Edit', edit_team_path(@teamvds) %> |
 <%= link_to 'Back', teams_path %>

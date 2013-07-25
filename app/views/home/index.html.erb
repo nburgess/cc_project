@@ -1,10 +1,17 @@
 <h3 class= "text-center">Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
-<div class= "text-center">
-    <a href="#" class="button">Log In</a>
-</div>
-<div class= "text-center">
-    <a href="#" class="small button">New User</a>
-</div>
+
+
+
+<% if user_signed_in? %>
+  <div class= "text-center">
+    <a href="static_pages/search_user" class="button" style="background-color: #9999FF;">Search Users</a>
+  </div>
+<%else%>
+  <div class= "text-center">
+    <a href="users/sign_in" class="button"style="background-color: #9999FF;">Log In</a>
+  </div>
+
+  <div class= "text-center">
+    <a href="users/sign_up" class="small button"style="background-color: #9999FF;">New User</a>
+  </div>
+<%end%>

@@ -20,8 +20,8 @@
 
 <% @distance_essentials.each do |distance_essential| %>
   <tr>
-    <td><%= distance_essential.user %></td>
-    <td><%= distance_essential.team %></td>
+    <td><%= distance_essential.user.name %></td>
+    <td><%= distance_essential.team.name %></td>
     <td><%= distance_essential.date %></td>
     <td><%= distance_essential.diet_quality %></td>
     <td><%= distance_essential.hours_of_sleep %></td>

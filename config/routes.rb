@@ -1,4 +1,8 @@
 CcProject::Application.routes.draw do
+  get "static_pages/search_user"
+
+  get "static_pages/about"
+
   resources :distance_essentials
 
   resources :teams

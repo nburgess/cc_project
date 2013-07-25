@@ -13,7 +13,8 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
-    @teamvds = Team.find(params[:id]).distance_essentials
+    @team = Team.find(params[:id])
+    @teamvds = @team.distance_essentials
     
     #@user= User.find(params[:id])
     #@teams = @user.teams
