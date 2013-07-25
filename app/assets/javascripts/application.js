@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree .
+//= require dataTables/jquery.dataTables
+//= require dataTables.foundation
+//= require teams
 
 $(function(){ $(document).foundation(); });

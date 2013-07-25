@@ -39,3 +39,5 @@ group :test do
   gem 'database_cleaner'
   gem 'email_spec'
 end
+
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
