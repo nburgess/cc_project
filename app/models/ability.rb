@@ -3,15 +3,25 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    if user.has_role?(:admin) || user.has_role?(:coach)
+    if user.has_role?(:admin)
       can :manage, :all
+    elsif user.has_role?(:coach)
+      can :manage, Team do |t|
+        t.coaches.include?(user)
+      end
+
+      can :create, Team
     elsif user.has_role? :player
       can :manage, DistanceEssential do |dc|
         dc.user_id == user.id
       end
+     
+      can :read, Team do |t|
+        t.users.include?(user)
+      end
       can :create, DistanceEssential
     else
-      can :read, :all
+      #can :read, :all
       can :create, User
     end
    
