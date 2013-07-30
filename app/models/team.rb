@@ -3,4 +3,5 @@ class Team < ActiveRecord::Base
 
   has_many :distance_essentials
   has_many :users, through: :distance_essentials
+
 end

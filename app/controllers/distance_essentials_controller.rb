@@ -1,4 +1,5 @@
 class DistanceEssentialsController < ApplicationController
+  load_and_authorize_resource 
   # GET /distance_essentials
   # GET /distance_essentials.json
   def index

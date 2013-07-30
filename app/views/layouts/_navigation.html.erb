@@ -1,5 +1,14 @@
-<ul class="nav" style="background-color: ; font-size: ; ">
-  <li ><%= link_to "Home", root_path, :class => 'brand' %></li>
+<style type="text/css" id=>
+
+#yo a:link {color: 	#BABAD4; }
+#yo a:active {color:	#BABAD4;}
+#yo a:visited {color:	#BABAD4;}
+#yo a:hover {color: white;}
+
+</style>
+
+<ul id="yo" class="nav" style="background-color:#30307e ;link-color:black; font-size: ; ">
+  <li style="font-size:30px; margin-left:5px; "><%= link_to "CC", root_path, :class => 'brand' %></li>
   <% if user_signed_in? %>
     <li>
         <%= link_to 'Profile', user_path(current_user) %>
@@ -21,11 +30,14 @@
     <% end %>
   <% else %>
     <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
+      <%= link_to 'About', static_pages_about_path %>
+    </li>
+    <li>
+      <%= link_to 'Sign up', new_user_registration_path %>
     </li>
   <% end %>
     <% if user_signed_in? %>
-    <li style=" float: right; margin-right: 5px;">
+    <li >
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>
     </li>
   <% else %>

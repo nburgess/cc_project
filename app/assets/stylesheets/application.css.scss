@@ -13,6 +13,13 @@
  *= require dataTables/jquery.dataTables
  *= require dataTables.foundation
 */
+
+a:link {color: 	#30307e; }
+a:active {color:	#30307e;}
+a:visited {color:	#30307e;}
+a:hover {color: white;}
+
+
 .brand {
   float: left;
   padding-right: 8px;

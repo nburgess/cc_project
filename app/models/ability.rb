@@ -3,13 +3,28 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-    if user.has_role? :admin
+    if user.has_role?(:admin) || user.has_role?(:coach)
       can :manage, :all
+    elsif user.has_role? :player
+      can :manage, DistanceEssential do |dc|
+        dc.user_id == user.id
+      end
+      can :create, DistanceEssential
+    else
+      can :read, :all
+      can :create, User
     end
+   
+     
+    #if user.has_role? :admin
+    # can :manage, Distance_essentials
+    #else
+    # can [:read, :create], Distance_essentials
+    #  can [:edit, :destroy], Distance_essentials, :user_id => user.id
+    #end
 
-    if user.has_role? :player
-	cannot :read, edit_team
-    end
+
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

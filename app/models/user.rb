@@ -18,5 +18,13 @@ class User < ActiveRecord::Base
 
   has_many :distance_essentials
   has_many :teams, through: :distance_essentials
-  
+
+#before_create :add_role
+#private
+ #  def add_role
+  #    if 
+   #   else
+	
+    #  end
+   #end
 end
