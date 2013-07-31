@@ -1,4 +1,7 @@
 CcProject::Application.routes.draw do
+  resources :team_invitations
+
+
   get "static_pages/search_user"
 
   get "static_pages/about"

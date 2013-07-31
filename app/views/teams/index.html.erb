@@ -1,6 +1,6 @@
-<h2>Listing Teams</h2>
+<h2 class="indent">Listing Teams</h2>
 
-<table>
+<table class="indent">
   <tr>
     <th>Name</th>
     <th></th>
@@ -23,11 +23,56 @@
   </tr>
 <% end %>
 </table>
+<br />
+
+<% if current_user.has_role? :coach %>
+<h2 class="indent">Teams I Coach</h2>
+
+<table class="indent">
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @coached_teams.each do |team| %>
+  <tr>
+    <td><%= team.name %></td>
+    <td><%= link_to 'Show', team %></td>
+	<% if current_user.has_role? :admin %>
+    <td><%= link_to 'Edit', edit_team_path(team) %></td>
+    <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<%end%>
+	<% if current_user.has_role? :coach %>
+    <td><%= link_to 'Edit', edit_team_path(team) %></td>
+    <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<%end%>
+  </tr>
+<% end %>
+</table>
 
 <br />
+<%end%>
+
 <% if current_user.has_role? :coach %>
-<%= link_to 'New Team', new_team_path %>
+<div class="indent">
+    <a href="team_invitations" class="button" style="background-color: #30307e;color:#BABAD4;">Add Players To Team</a>
+</div>
 <%end%>
 <% if current_user.has_role? :admin %>
-<%= link_to 'New Team', new_team_path %>
+<div class="indent">
+    <a href="team_invitations" class="button" style="background-color: #30307e;color:#BABAD4;">Add Players To Team</a>
+</div>
+<%end%>
+
+<% if current_user.has_role? :coach %>
+<div class="indent">
+    <a href="teams/new" class="button" style="background-color: #30307e;color:#BABAD4;">New Team</a>
+</div>
+<%end%>
+<% if current_user.has_role? :admin %>
+<div class="indent">
+    <a href="teams/new" class="button" style="background-color: #30307e;color:#BABAD4;">New Team</a>
+</div>
 <%end%>

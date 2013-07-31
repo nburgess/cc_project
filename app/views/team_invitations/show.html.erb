@@ -1,0 +1,17 @@
+<div class="indent">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @team_invitation.user.name %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%= @team_invitation.team.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_team_invitation_path(@team_invitation) %> |
+<%= link_to 'Back', team_invitations_path %>
+</div>

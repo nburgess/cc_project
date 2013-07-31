@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730175943) do
+ActiveRecord::Schema.define(:version => 20130731173738) do
 
   create_table "coached_teams_coaches", :id => false, :force => true do |t|
     t.integer "team_id"
@@ -90,6 +90,16 @@ ActiveRecord::Schema.define(:version => 20130730175943) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "team_invitations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "team_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "team_invitations", ["team_id"], :name => "index_team_invitations_on_team_id"
+  add_index "team_invitations", ["user_id"], :name => "index_team_invitations_on_user_id"
 
   create_table "teams", :force => true do |t|
     t.string   "name"

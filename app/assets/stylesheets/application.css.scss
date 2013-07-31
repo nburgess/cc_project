@@ -13,10 +13,12 @@
  *= require dataTables/jquery.dataTables
  *= require dataTables.foundation
 */
-
+.indentb {margin-left:5%;
+          margin-right:5%;}
+.indent {margin-left:5%;}
 a:link {color: 	#30307e; }
-a:active {color:	#30307e;}
-a:visited {color:	#30307e;}
+a:active {color:#30307e;}
+a:visited {color:#30307e;}
 a:hover {color: white;}
 
 

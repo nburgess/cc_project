@@ -1,8 +1,10 @@
-<% if can? :read, @edit_team %>
+<div class="indentb">
 <h2>Editing Team</h2>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @team %> |
 <%= link_to 'Back', teams_path %>
-<%end%>
+</div>
+
+

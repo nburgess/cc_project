@@ -5,17 +5,42 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.has_role?(:admin)
       can :manage, :all
+      can :read, :all
+    
     elsif user.has_role?(:coach)
+      can :create, TeamInvitation
+         
+      can :update, TeamInvitation do |i|
+        i.team.coaches.include?(user)
+      end
+
+      can :destroy, TeamInvitation do |i|
+        i.team.coaches.include?(user)
+      end
+
+      can :read, TeamInvitation do |i|
+        i.team.coaches.include?(user)
+      end
+
       can :manage, Team do |t|
         t.coaches.include?(user)
       end
-
       can :create, Team
-    elsif user.has_role? :player
+
       can :manage, DistanceEssential do |dc|
         dc.user_id == user.id
       end
-     
+      can :create, DistanceEssential
+
+      can :read, User
+
+    elsif user.has_role? :player
+      can [:show, :update], User, :id => user.id
+
+      can :manage, DistanceEssential do |dc|
+        dc.user_id == user.id
+      end
+
       can :read, Team do |t|
         t.users.include?(user)
       end

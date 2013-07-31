@@ -1,19 +1,20 @@
-<h2>User</h2>
-  <p> <b>User:</b> <%= @user.name %> </p>
-  <p> <b>Email:</b> <%= @user.email if @user.email %> </p>
+<h2 class="indent">User</h2>
+  <p class="indent"> <b>User:</b> <%= @user.name %> </p>
+  <p class="indent"> <b>Email:</b> <%= @user.email if @user.email %> </p>
+<div class="indentb">
 <table id="team_distance_essentials">
  <thead>
   <tr>
     <th>Team</th>
     <th>Date</th>
-    <th>Diet quality</th>
-    <th>Hours of sleep</th>
-    <th>Minutes run</th>
-    <th>Minutes streching</th>
-    <th>Minutes icing</th>
+    <th>Diet Quality Score</th>
+    <th>Hours of Sleep</th>
+    <th>Minutes Running</th>
+    <th>Minutes Stretching</th>
+    <th>Minutes Icing</th>
     <th>Core strength</th>
-    <th>Upper body weights</th>
-    <th>Minutes cross training</th>
+    <th>Upper Body Weights</th>
+    <th>Minutes Cross Training</th>
     <th></th>
     <th></th>
     <th></th>
@@ -39,3 +40,4 @@
 <% end %>
  </tbody>
 </table>
+</div>

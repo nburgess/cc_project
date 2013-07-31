@@ -17,15 +17,9 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :role_ids
 
   has_many :distance_essentials
-  has_many :teams, through: :distance_essentials, :uniq => true
-  has_and_belongs_to_many :coached_teams, :class_name => "Team", :join_table => "coached_teams_coaches"
+  has_many :teams, through: :team_invitations, :uniq => true
+  has_and_belongs_to_many :coached_teams, :class_name => "Team", :join_table => "coached_teams_coaches", :uniq => true
+  has_many :team_invitations
 
-#before_create :add_role
-#private
- #  def add_role
-  #    if 
-   #   else
-	
-    #  end
-   #end
+
 end

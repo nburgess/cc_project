@@ -1,18 +1,61 @@
 <p id="notice"><%= notice %></p>
-<h2><%= @team.name  %></h2>
+<h2 class="indent"><%= @team.name  %></h2>
+<div class="indent">
+<% if current_user.has_role? :player %>
 <table id="team_distance_essentials">
   <thead>
     <tr>
       <th>User</th>
       <th>Date</th>
-      <th>Diet quality</th>
-      <th>Hours of sleep</th>
-      <th>Minutes run</th>
-      <th>Minutes streching</th>
-      <th>Minutes icing</th>
-      <th>Core strength</th>
-      <th>Upper body weights</th>
-      <th>Minutes cross training</th>
+      <th>Diet Quality Score</th>
+      <th>Hours of Sleep</th>
+      <th>Minutes Running</th>
+      <th>Minutes Streching</th>
+      <th>Minutes Icing</th>
+      <th>Core Strength</th>
+      <th>Upper Body Weights</th>
+      <th>Minutes Cross Training</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead> 
+  <tbody>
+<% @teamplayer.each do |distance_essential| %>
+  <tr>
+      <td><%= distance_essential.user.name %></td>
+      <td><%= distance_essential.date %></td>
+      <td><%= distance_essential.diet_quality %></td>
+      <td><%= distance_essential.hours_of_sleep %></td>
+      <td><%= distance_essential.minutes_run %></td>
+      <td><%= distance_essential.minutes_streching %></td>
+      <td><%= distance_essential.minutes_icing %></td>
+      <td><%= distance_essential.core_strength %></td>
+      <td><%= distance_essential.upper_body_weights %></td>
+      <td><%= distance_essential.minutes_cross_training %></td>
+      <td><%= link_to 'Show', distance_essential %></td>
+      <td><%= link_to 'Edit', edit_distance_essential_path(distance_essential) %></td>
+      <td><%= link_to 'Destroy', distance_essential, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+
+<%else%>
+<table id="team_distance_essentials">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th>Diet Quality Score</th>
+      <th>Hours of Sleep</th>
+      <th>Minutes Running</th>
+      <th>Minutes Streching</th>
+      <th>Minutes Icing</th>
+      <th>Core Strength</th>
+      <th>Upper Body Weights</th>
+      <th>Minutes Cross Training</th>
       <th></th>
       <th></th>
       <th></th>
@@ -38,6 +81,8 @@
 <% end %>
   </tbody>
 </table>
+<%end%>
+</div>
 
 
 <%= link_to 'Back', teams_path %>

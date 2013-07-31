@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2 class="indent">Sign up</h2>
 <!--
 <form class="custom">
   <div class="row">
@@ -11,7 +11,7 @@
 -->
 
 
-
+<div class="indentb">
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
@@ -23,3 +23,4 @@
   <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
 <% end %>
 <%= render "devise/shared/links" %>
+</div>

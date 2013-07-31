@@ -4,6 +4,7 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = current_user.teams
+    @coached_teams = current_user.coached_teams
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,7 +17,8 @@ class TeamsController < ApplicationController
   def show
     #logger.debug("\n\n\n\n#{current_user.id}\n\n\n\n")
     @team = Team.find(params[:id])
-    @teamvds = @team.distance_essentials.where(:user_id => current_user.id)
+    @teamvds = @team.distance_essentials
+    @teamplayer = @team.distance_essentials.where(:user_id => current_user.id)
     
     #@user= User.find(params[:id])
     #@teams = @user.teams
@@ -47,7 +49,8 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = Team.new(params[:team])
-
+    @team.current_user = current_user
+  
     respond_to do |format|
       if @team.save
         format.html { redirect_to @team, notice: 'Team was successfully created.' }

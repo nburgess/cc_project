@@ -1,0 +1,26 @@
+<h2 class="indent">Team Invitations</h2>
+<div class="indent">
+<table>
+  <tr>
+    <th>User</th>
+    <th>Team</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @team_invitations.each do |team_invitation| %>
+  <tr>
+    <td><%= team_invitation.user.name %></td>
+    <td><%= team_invitation.team.name %></td>
+    <td><%= link_to 'Show', team_invitation %></td>
+    <td><%= link_to 'Edit', edit_team_invitation_path(team_invitation) %></td>
+    <td><%= link_to 'Destroy', team_invitation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Team invitation', new_team_invitation_path %>
+</div>

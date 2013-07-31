@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :team %>
+    <%= f.association :team, :collection => current_user.teams %>
     <%= f.input :date %>
     <%= f.input :diet_quality %>
     <%= f.input :hours_of_sleep %>
