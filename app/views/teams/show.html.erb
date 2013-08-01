@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h2 class="indent"><%= @team.name  %></h2>
-<div class="indent">
+<div class="indentb">
 <% if current_user.has_role? :player %>
 <table id="team_distance_essentials">
   <thead>
@@ -82,7 +82,7 @@
   </tbody>
 </table>
 <%end%>
-</div>
 
 
 <%= link_to 'Back', teams_path %>
+</div>

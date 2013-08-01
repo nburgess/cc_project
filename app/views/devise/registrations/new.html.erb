@@ -1,18 +1,11 @@
 <h2 class="indent">Sign up</h2>
-<!--
-<form class="custom">
-  <div class="row">
-    <div class="large-4 columns">
-      <label for="radio1"><input name="radio1" type="radio" id="radio1" style="display:none;" CHECKED><span class="custom radio checked"></span> Player</label>
-      <label for="radio1"><input name="radio1" type="radio" id="radio1" style="display:none;"><span class="custom radio"></span> Coach</label>
-    </div>
-  </div>
-</form>
--->
 
 
 <div class="indentb">
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+  <div class="warning"">
+  <%= devise_error_messages!%>
+  </div>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
   <%= f.association :roles, :collection => Role.all_but_admin , :as => :radio_buttons, :required => true %>
@@ -24,3 +17,4 @@
 <% end %>
 <%= render "devise/shared/links" %>
 </div>
+

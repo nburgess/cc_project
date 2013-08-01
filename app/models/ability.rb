@@ -9,15 +9,12 @@ class Ability
     
     elsif user.has_role?(:coach)
       can :create, TeamInvitation
-         
       can :update, TeamInvitation do |i|
         i.team.coaches.include?(user)
       end
-
       can :destroy, TeamInvitation do |i|
         i.team.coaches.include?(user)
       end
-
       can :read, TeamInvitation do |i|
         i.team.coaches.include?(user)
       end
@@ -33,6 +30,7 @@ class Ability
       can :create, DistanceEssential
 
       can :read, User
+
 
     elsif user.has_role? :player
       can [:show, :update], User, :id => user.id

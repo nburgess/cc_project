@@ -60,6 +60,7 @@ class DistanceEssentialsController < ApplicationController
   # PUT /distance_essentials/1.json
   def update
     @distance_essential = DistanceEssential.find(params[:id])
+    @distance_essential.current_user = current_user
 
     respond_to do |format|
       if @distance_essential.update_attributes(params[:distance_essential])
@@ -79,7 +80,7 @@ class DistanceEssentialsController < ApplicationController
     @distance_essential.destroy
 
     respond_to do |format|
-      format.html { redirect_to distance_essentials_url }
+      format.html { redirect_to(:back) }
       format.json { head :no_content }
     end
   end

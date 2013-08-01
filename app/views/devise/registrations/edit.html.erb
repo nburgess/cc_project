@@ -1,6 +1,9 @@
 <h2 class="indent">Edit <%= resource_name.to_s.humanize %></h2>
 <div class="indentb">
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
+  <div class="warning"">
+  <%= devise_error_messages!%>
+  </div>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
   <%= f.input :name, :autofocus => true %>

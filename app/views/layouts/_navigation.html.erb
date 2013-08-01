@@ -1,40 +1,41 @@
 <style type="text/css" id=>
 
-#yo a:link {color: 	#BABAD4; }
-#yo a:active {color:	#BABAD4;}
-#yo a:visited {color:	#BABAD4;}
+#yo a:link {color:#BABAD4; }
+#yo a:active {color:#BABAD4;}
+#yo a:visited {color:#BABAD4;}
 #yo a:hover {color: white;}
 
 </style>
 
-<ul  id="yo" class="nav" style="background-color:#30307e ;link-color:black; font-size: ;  ">
+<ul  id="yo" class="nav" style="background-color:#30307e">
+<div class="indentb" style="text-align:right;">
   <li style="font-size:30px; margin-left:1%; "><%= link_to "CC", root_path, :class => 'brand' %></li>
   <% if user_signed_in? %>
-    <li>
+    <li style="margin-right:.5%;">
         <%= link_to 'Profile', user_path(current_user) %>
     </li>
-    <li>
+    <li style="margin-right:.5%;">
 	<%= link_to 'New Distance Essential', new_distance_essential_path %>
     </li>
-    <li>
+    <li style="margin-right:.5%;">
     <%= link_to 'Team', teams_path %>
     </li>
-    <li>
+    <li style="margin-right:.5%;">
     <%= link_to 'Edit Account', edit_user_registration_path %>
     </li>
    
     <% if current_user.has_role? :admin %>
-      <li>
+      <li style="margin-right:.5%;">
       <%= link_to 'Admin', users_path %>
       </li>
     <% end %>
   <% else %>
-    <li>
+    <li style="margin-right:.5%;">
       <%= link_to 'About', static_pages_about_path %>
     </li>
-    <li>
+    <li style="margin-right:.5%;">
       <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
+    </li style="margin-right:.5%;">
   <% end %>
     <% if user_signed_in? %>
     <li >
@@ -44,5 +45,6 @@
     <li>
     <%= link_to 'Login', new_user_session_path %>
     </li>
+</div>
   <% end %>
 </ul>

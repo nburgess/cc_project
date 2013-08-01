@@ -54,25 +54,20 @@
 
 <br />
 <%end%>
-
+<p class="indent">
 <% if current_user.has_role? :coach %>
-<div class="indent">
-    <a href="team_invitations" class="button" style="background-color: #30307e;color:#BABAD4;">Add Players To Team</a>
-</div>
+<%= link_to "Add Player To Team", team_invitations_path%>
 <%end%>
 <% if current_user.has_role? :admin %>
-<div class="indent">
-    <a href="team_invitations" class="button" style="background-color: #30307e;color:#BABAD4;">Add Players To Team</a>
-</div>
+<%= link_to "Add Player To Team", team_invitations_path%>
 <%end%>
+</p>
 
+<p class="indent">
 <% if current_user.has_role? :coach %>
-<div class="indent">
-    <a href="teams/new" class="button" style="background-color: #30307e;color:#BABAD4;">New Team</a>
-</div>
+<%= link_to "New Team", new_team_path%>
 <%end%>
 <% if current_user.has_role? :admin %>
-<div class="indent">
-    <a href="teams/new" class="button" style="background-color: #30307e;color:#BABAD4;">New Team</a>
-</div>
+<%= link_to "New Team", new_team_path%>
 <%end%>
+</p>
