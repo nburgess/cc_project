@@ -40,4 +40,8 @@ group :test do
   gem 'email_spec'
 end
 
+group :production do
+  gem 'pg'
+end
+
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
