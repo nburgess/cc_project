@@ -15,9 +15,10 @@ class TeamsController < ApplicationController
   # GET /teams/1
   # GET /teams/1.json
   def show
+   
     #logger.debug("\n\n\n\n#{current_user.id}\n\n\n\n")
     @team = Team.find(params[:id])
-    @teamvds = @team.distance_essentials
+    @teamvds = DistanceEssential.where(:team_id => params[:id])
     @teamplayer = @team.distance_essentials.where(:user_id => current_user.id)
     
     #@user= User.find(params[:id])
@@ -25,6 +26,7 @@ class TeamsController < ApplicationController
     #	
     respond_to do |format|
       format.html # show.html.erb
+      format.csv { render text: @teamvds.to_csv}
       format.json { render json: @teamvds }
     end
   end

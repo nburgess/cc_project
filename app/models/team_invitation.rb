@@ -2,6 +2,9 @@ class TeamInvitation < ActiveRecord::Base
   belongs_to :user
   belongs_to :team
   
+  validates :email, :presence =>true
+  validates :team, :presence =>true
+
   attr_accessor :email
   attr_accessible :team_id, :email
   before_create :associate_user

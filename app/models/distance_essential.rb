@@ -8,6 +8,7 @@ class DistanceEssential < ActiveRecord::Base
 
   validate :cannot_add_when_uninvited
 
+  before_create :add_user
 
   def cannot_add_when_uninvited
     if !self.current_user.teams.include?(self.team)
@@ -15,7 +16,15 @@ class DistanceEssential < ActiveRecord::Base
     end
   end
 
-before_create :add_user
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |essentials|
+        csv << essentials.attributes.values_at(*column_names)
+      end
+    end
+  end
+
 private
    def add_user
       if  !self.current_user.blank?

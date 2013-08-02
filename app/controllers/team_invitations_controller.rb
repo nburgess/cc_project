@@ -3,8 +3,8 @@ class TeamInvitationsController < ApplicationController
   # GET /team_invitations
   # GET /team_invitations.json
   def index
-    #@team_invitations = TeamInvitation.current_user
-    @team_invitations = TeamInvitation.all
+    @team_invitations = TeamInvitation.where(:team_id => current_user.coached_teams)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @team_invitations }

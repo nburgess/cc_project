@@ -1,9 +1,11 @@
 class Team < ActiveRecord::Base
   attr_accessible :name
 
-  has_many :distance_essentials
+  validates :name, :presence =>true
+
+  has_many :distance_essentials, :dependent => :destroy
   has_many :users, through: :team_invitations, :uniq => true
-  has_many :team_invitations  
+  has_many :team_invitations, :dependent => :destroy
 
   has_and_belongs_to_many :coaches, :class_name => 'User', :join_table => "coached_teams_coaches", :uniq => true
   

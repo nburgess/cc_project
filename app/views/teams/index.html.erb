@@ -12,11 +12,8 @@
   <tr>
     <td><%= team.name %></td>
     <td><%= link_to 'Show', team %></td>
-	<% if current_user.has_role? :admin %>
-    <td><%= link_to 'Edit', edit_team_path(team) %></td>
-    <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	<%end%>
-	<% if current_user.has_role? :coach %>
+    <td><%= link_to 'Export', team_path(team, :format => :csv) %></td>
+	<% if current_user.has_role?(:admin) || current_user.has_role?(:coach) %>
     <td><%= link_to 'Edit', edit_team_path(team) %></td>
     <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	<%end%>
@@ -40,11 +37,8 @@
   <tr>
     <td><%= team.name %></td>
     <td><%= link_to 'Show', team %></td>
-	<% if current_user.has_role? :admin %>
-    <td><%= link_to 'Edit', edit_team_path(team) %></td>
-    <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	<%end%>
-	<% if current_user.has_role? :coach %>
+    <td><%= link_to 'Export', team_path(team, :format => :csv) %></td>
+	<% if current_user.has_role?(:admin) || current_user.has_role?(:coach) %>
     <td><%= link_to 'Edit', edit_team_path(team) %></td>
     <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 	<%end%>
