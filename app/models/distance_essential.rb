@@ -18,9 +18,25 @@ class DistanceEssential < ActiveRecord::Base
 
   def self.to_csv
     CSV.generate do |csv|
-      csv << column_names
+      csv << %w[id player_name team_name date diet_quality hours_of_sleep minutes_run minutes_stretching minutes_icing core_strength upper_body_weights minutes_cross_training]
+
       all.each do |essentials|
-        csv << essentials.attributes.values_at(*column_names)
+        row = []
+        row << essentials.id
+        row << essentials.user.name
+        row << essentials.team.name
+        row << essentials.date
+        row << essentials.diet_quality
+        row << essentials.hours_of_sleep
+        row << essentials.minutes_run
+        row << essentials.minutes_streching
+        row << essentials.minutes_icing
+        row << essentials.core_strength
+        row << essentials.upper_body_weights
+        row << essentials.minutes_cross_training
+
+
+        csv << row
       end
     end
   end

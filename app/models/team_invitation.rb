@@ -14,7 +14,6 @@ class TeamInvitation < ActiveRecord::Base
     if user.blank?
       # Create new user if it doesn't exist.
       new_user = User.new(:email => self.email, :password => Devise.friendly_token[0,20])
-      new_user.skip_confirmation!
       new_user.save!
      
       # Associate the newly created user with the invitation

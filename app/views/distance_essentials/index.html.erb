@@ -1,3 +1,4 @@
+<% if current_user.has_role? :admin %>
 <h2 class="indent">Listing Distance Essentials</h2>
 
 <table class="indent">
@@ -42,3 +43,4 @@
 <div class="indent">
 <%= link_to 'New Distance Essential', new_distance_essential_path %>
 </div>
+<%end%>

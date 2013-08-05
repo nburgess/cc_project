@@ -1,7 +1,4 @@
-$(document).ready(function () {
-  $('#team_distance_essentials').dataTable({
-  
-    
+$('#team_distance_essentials').dataTable({  
    "aoColumns": [
       null,
 	null,
@@ -17,6 +14,5 @@ $(document).ready(function () {
 	{ "bSortable": false},
 	{ "bSortable": false}
 	]
-  });
 });
 

@@ -29,7 +29,7 @@ class Ability
       end
       can :create, DistanceEssential
 
-      can :read, User
+      can [:show, :update], User, :id => user.id
 
 
     elsif user.has_role? :player
