@@ -1,9 +1,9 @@
 <h2 class= "text-center">Search for User</h2>
 <div class="indent">
+<% if current_user.has_role?(:admin) || current_user.has_role?(:coach) %>
 <% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %> | 
-  <% if current_user.has_role?(:admin) || current_user.has_role?(:coach) %>
-  <%=link_to user.email, user %>
+  <p>User: <%=link_to user.name, user %>
+ <!--| <%=link_to user.email, user %>-->
   <%end%></p>
 
 
