@@ -14,12 +14,20 @@
  *= require dataTables.foundation
 */
 
+
+/*
+
+#indentl {margin-left:5%;}
+#indentr {margin-right:5%;}
+
+
+*/
+#indentb {margin-left:3.5%; margin-right:5%;}
 .indentb {margin-left:5%;
           margin-right:5%;}
-
 .indent {margin-left:5%;}
 
-a:link {color: 	#30307e; }
+a:link {color:#30307e; }
 a:active {color:#30307e;}
 a:visited {color:#30307e;}
 a:hover {color: white;}
