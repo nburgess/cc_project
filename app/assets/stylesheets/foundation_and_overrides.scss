@@ -615,14 +615,14 @@ $default-float: left;
 // We use these to control the style of the custom select dropdown element.
 
 // $custom-dropdown-height: 200px;
-// $custom-dropdown-bg: #fff;
+//$custom-dropdown-bg: #fff;
 // $custom-dropdown-border-color: darken(#fff, 20%);
 // $custom-dropdown-border-width: 1px;
 // $custom-dropdown-border-style: solid;
 // $custom-dropdown-font-color: #555;
 // $custom-dropdown-font-size: emCalc(14);
 // $custom-dropdown-color-selected: #eeeeee;
-// $custom-dropdown-font-color-selected: #000;
+//$custom-dropdown-font-color-selected: #000;
 // $custom-dropdown-shadow: 0 2px 2px 0px rgba(0,0,0,0.1);
 // $custom-dropdown-offset-top: auto;
 // $custom-dropdown-list-padding: emCalc(4);
@@ -1034,7 +1034,7 @@ $default-float: left;
 // $section-title-color-active: #333;
 // $section-title-bg: #efefef;
 // $section-title-bg-active: darken($section-title-bg, $section-function-factor);
-// $section-title-bg-active-tabs: #fff;
+//$section-title-bg-active-tabs: #fff;
 // $section-title-bg-hover: darken($section-title-bg, $section-function-factor / 2);
 
 // Want to control border size, here ya go!
@@ -1105,8 +1105,8 @@ $default-float: left;
 // We use these to control the active item styles
 
 // $sub-nav-active-font-weight: bold;
-// $sub-nav-active-bg: $primary-color;
-// $sub-nav-active-color: #fff;
+//$sub-nav-active-bg: $primary-color;
+//$sub-nav-active-color: #fff;
 // $sub-nav-active-padding: emCalc(3, 9);
 // $sub-nav-active-cursor: default;
 
@@ -1271,7 +1271,7 @@ $topbar-title-font-size: emCalc(30);
 //$topbar-link-bg-hover: darken($topbar-bg, 3%);
 $topbar-link-bg-active: darken($topbar-bg, 0%);
  // $topbar-margin: 1%;
-// $topbar-dropdown-label-color: #555;
+//$topbar-dropdown-label-color: #555;
 // $topbar-dropdown-label-text-transform: uppercase;
 // $topbar-dropdown-label-font-weight: bold;
 // $topbar-dropdown-label-font-size: emCalc(10);
@@ -1283,8 +1283,8 @@ $topbar-link-bg-active: darken($topbar-bg, 0%);
 // $topbar-menu-link-weight: bold;
 // $topbar-menu-link-color: #fff;
 // $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
+$topbar-menu-link-color-toggled: #7A7AAD;
+$topbar-menu-icon-color-toggled: #7A7AAD;
 
 // Transitions and breakpoint styles
 

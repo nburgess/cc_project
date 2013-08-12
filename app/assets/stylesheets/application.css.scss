@@ -22,6 +22,10 @@
 
 
 */
+
+.top-bar-section li a:hover:not(.button) {
+    background: #22225B;
+  }
 #indentb {margin-left:3.5%; margin-right:5%;}
 .indentb {margin-left:5%;
           margin-right:5%;}
