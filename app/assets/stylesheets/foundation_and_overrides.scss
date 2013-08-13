@@ -341,7 +341,6 @@ $default-float: left;
 //
 // Button Variables
 //
-
 // We use these to build padding for buttons.
 
 // $button-med: emCalc(12);
@@ -357,8 +356,8 @@ $default-float: left;
 // We use these to control button text styles.
 
 // $button-font-family: inherit;
-// $button-font-color: #fff;
-// $button-font-color-alt: #333;
+$button-font-color:white;
+$button-font-color-alt:black;
 // $button-font-med: emCalc(16);
 // $button-font-tny: emCalc(11);
 // $button-font-sml: emCalc(13);
