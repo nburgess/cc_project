@@ -9,6 +9,7 @@
   <%= f.error_notification %>
   <%= display_base_errors resource %>
   <%= f.association :roles, :collection => Role.all_but_admin ,:as =>:radio,:required => true %>
+<br></br>
   <%= f.input :name, :autofocus => true %>
   <%= f.input :email, :required => true %>
   <%= f.input :password, :required => true %>
