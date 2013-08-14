@@ -23,9 +23,20 @@
 
 */
 
+#sticky_footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
 .top-bar-section li a:hover:not(.button) {
     background: #22225B;
   }
+.top-bar-section h1,li a:hover:not(.button) {
+    background: #22225B;
+  }
+.fuckthepolice a:hover:not(.button) {background:#30307e;}
+
 #indentb {margin-left:3.5%; margin-right:5%;}
 .indentb {margin-left:5%;
           margin-right:5%;}
