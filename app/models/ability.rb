@@ -6,7 +6,8 @@ class Ability
     if user.has_role?(:admin)
       can :manage, :all
       can :read, :all
-    
+      can :access, :rails_admin   # grant access to rails_admin
+      can :dashboard  
     elsif user.has_role?(:coach)
       can :create, TeamInvitation
       can :update, TeamInvitation do |i|
